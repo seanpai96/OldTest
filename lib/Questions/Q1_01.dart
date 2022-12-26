@@ -236,7 +236,7 @@ class _Question1Sub1PageState extends State<Question1Sub1Page> {
   void saveAge(int age) {
     setState(() {
       DateTime now = DateTime.now();
-      if(now.year == int.parse(ageInputController.text)){
+      if(now.year == int.parse(ageInputController.text) || now.year == int.parse(ageInputController.text)+1911){
         user.point += 1;
       }
     });
