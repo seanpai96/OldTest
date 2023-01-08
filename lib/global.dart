@@ -16,6 +16,10 @@ var user = UserData();
 
 var q2SelectedArray = [-1, -1, -1];
 var q7SelectedArray = [-1, -1, -1];
+var q5RandomInt = -1;
+var q5RandomIntArray = [-1, -1, -1, -1, -1];
+var q6RandomInt = -1;
+var q6RandomIntArray = [-1, -1, -1];
 
 bool isNumeric(String? s){
   if(s == null) return false;
@@ -25,4 +29,6 @@ bool isNumeric(String? s){
 void reset(){
   user = UserData();
   q2SelectedArray = [-1, -1, -1];
+  q5RandomIntArray = [-1, -1, -1, -1, -1];
+  q6RandomIntArray = [-1, -1, -1];
 }

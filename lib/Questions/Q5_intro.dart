@@ -1,5 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'dart:math';
 import '../global.dart';
 
 class Question5IntroPage extends StatefulWidget {
@@ -35,7 +36,14 @@ class _Question5IntroPageState extends State<Question5IntroPage> {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/profile/age');
+                      Random rnd = Random();
+                      q5RandomInt = 10000+rnd.nextInt(89999);
+                      int tmp = q5RandomInt;
+                      for(int i=0;i<5;i++){
+                        q5RandomIntArray[i] = tmp.remainder(10);
+                        tmp ~/= 10;
+                      }
+                      Navigator.pushNamed(context, '/question/5-1');
                     },
                     style: ElevatedButton.styleFrom(
                         textStyle: const TextStyle(

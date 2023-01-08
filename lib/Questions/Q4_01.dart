@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
+import '../Q2ImageData.dart';
 import '../global.dart';
 import 'package:old_test/library/socket_stt.dart';
 import 'package:old_test/library/sound_recorder.dart';
@@ -123,7 +124,27 @@ class _Question4PageState extends State<Question4Page> {
                       ),
                     ),
                   ),
-                  buildRecord()
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        buildRecord(),
+                        ElevatedButton(
+                          onPressed: () {
+                            for(var e in q2SelectedArray){
+                              if(recognitionController.text.contains(q2ImageDataList[e].name)){
+                                user.point++;
+                              }
+                            }
+                            Navigator.pushNamed(context, '/question/5-intro');
+                          },
+                          style: ElevatedButton.styleFrom(
+                              textStyle: const TextStyle(
+                                  fontSize: 80, fontWeight: FontWeight.bold)
+                          ),
+                          child: const Text("繼續"),
+                        )
+                      ]
+                  )
                 ])));
   }
 }

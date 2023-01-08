@@ -93,7 +93,7 @@ flutter:
     - assets/Images/Items/tv.png
     - assets/Voice/
     - assets/Voice/items/
-    - assets/Voice/numbers
+    - assets/Voice/numbers/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

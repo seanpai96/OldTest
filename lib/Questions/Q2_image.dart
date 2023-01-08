@@ -17,17 +17,19 @@ class _Question2ImagePageState extends State<Question2ImagePage> {
 
 
   Widget currentImage = q2ImageDataList[q2SelectedArray[0]].image;
+  String currentString = q2ImageDataList[q2SelectedArray[0]].name;
 
   play() async {
     audioPlayer.play(AssetSource(q2ImageDataList[q2SelectedArray[index]].audioPath));
     int flag = 1;
 
     audioPlayer.onPlayerComplete.listen((event) {
-      if(index < 3 && flag == 1){
+      if(index < 2 && flag == 1){
         flag = 0;
         setState(() {
           index = index + 1;
           currentImage = q2ImageDataList[q2SelectedArray[index]].image;
+          currentString = q2ImageDataList[q2SelectedArray[index]].name;
         });
         play();
         return;
@@ -78,7 +80,7 @@ class _Question2ImagePageState extends State<Question2ImagePage> {
                       child: Padding(
                         padding: EdgeInsets.all(10),
                         child: Text(
-                          q2ImageDataList[q2SelectedArray[0]].name,
+                          currentString,
                           style: bigTextStyle,
                         ),
                       ),

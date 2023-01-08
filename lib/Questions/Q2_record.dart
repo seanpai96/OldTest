@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:old_test/Q2ImageData.dart';
 import 'dart:math';
 import '../global.dart';
 import 'package:old_test/library/socket_stt.dart';
@@ -85,7 +86,7 @@ class _Question2RecordPageState extends State<Question2RecordPage> {
 
   void setTxt(taiTxt) {
     setState(() {
-      recognitionController.text = taiTxt;
+      recognitionController.text += taiTxt;
     });
   }
 
@@ -101,7 +102,7 @@ class _Question2RecordPageState extends State<Question2RecordPage> {
                 children: [
                   const Padding(padding: EdgeInsets.all(10),
                     child: Text(
-                      "請說出我剛剛講了哪三個！",
+                      "請說出我剛剛講了哪三個，\n說完全部再按確認！",
                       style: bigTextStyle,
                     ),
                   ),
@@ -130,6 +131,11 @@ class _Question2RecordPageState extends State<Question2RecordPage> {
                       buildRecord(),
                       ElevatedButton(
                         onPressed: () {
+                          for(var e in q2SelectedArray){
+                            if(recognitionController.text.contains(q2ImageDataList[e].name)){
+                              user.point++;
+                            }
+                          }
                           Navigator.pushNamed(context, '/question/3-1');
                         },
                         style: ElevatedButton.styleFrom(

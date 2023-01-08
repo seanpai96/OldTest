@@ -203,7 +203,6 @@ class _Question3PageState extends State<Question3Page> {
                               isValid = true;
                               confirmNumber(int.parse(ageInputController.text));
                               print(user.point);
-                              Navigator.pushNamed(context, '/question/1-4');
                             }else{
                               setState(() {
                                 isValid = false;

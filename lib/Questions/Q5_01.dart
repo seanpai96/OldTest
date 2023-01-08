@@ -11,10 +11,10 @@ class Question5Page extends StatefulWidget {
 }
 
 class _Question5PageState extends State<Question5Page> {
-  TextEditingController ageInputController = TextEditingController();
+  TextEditingController numInputController = TextEditingController();
   bool isValid = true, enableInput = false;
   int currentNumber = 100, currentTimes = 0;
-  String prompt = "100減7是多少？";
+  String prompt = "";
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class _Question5PageState extends State<Question5Page> {
                   child: Row(children: [
                     Expanded(
                         child: TextField(
-                          controller: ageInputController,
+                          controller: numInputController,
                           enabled: false,
                           decoration: InputDecoration(
                             disabledBorder: OutlineInputBorder(
@@ -192,11 +192,10 @@ class _Question5PageState extends State<Question5Page> {
                         )),
                         Expanded(child: ElevatedButton(
                           onPressed: enableInput ? () {
-                            if(isNumeric(ageInputController.text)){
+                            if(isNumeric(numInputController.text)){
                               isValid = true;
-                              confirmNumber(int.parse(ageInputController.text));
+                              confirmNumber(int.parse(numInputController.text));
                               print(user.point);
-                              Navigator.pushNamed(context, '/question/1-4');
                             }else{
                               setState(() {
                                 isValid = false;
@@ -226,31 +225,24 @@ class _Question5PageState extends State<Question5Page> {
 
   void pressNumber(int n) {
     setState(() {
-      ageInputController.text += n.toString();
+      numInputController.text += n.toString();
     });
   }
 
   void clearNumber() {
     setState(() {
       isValid = true;
-      ageInputController.clear();
+      numInputController.clear();
     });
   }
 
   void confirmNumber(int input) {
     setState(() {
-      if(currentNumber - input == 7){
-        user.point += 1;
+      if(numInputController.text == q5RandomInt.toString()){
+        user.point++;
       }
-      currentTimes++;
-      if(currentTimes == 5){
-        Navigator.pushNamed(context, '/question/1-4');
-      }else{
-        currentNumber = input;
-        prompt = "再減7是多少?";
-        clearNumber();
-      }
-
+      Navigator.pushNamed(context, '/question/6-intro');
+      clearNumber();
     });
   }
 
