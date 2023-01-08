@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../global.dart';
+import 'dart:math';
 
 class Question7IntroPage extends StatefulWidget {
   const Question7IntroPage({super.key});
@@ -28,7 +29,19 @@ class _Question7IntroPageState extends State<Question7IntroPage> {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/profile/age');
+                      //random select three number from 0 to 9 and put them into q2SelectedArray
+                      Random random = Random();
+                      int i = 0;
+                      while(i < 3){
+                        int temp = random.nextInt(10);
+                        if(q7SelectedArray.contains(temp)){
+                          continue;
+                        } else {
+                          q7SelectedArray[i] = temp;
+                          i++;
+                        }
+                      }
+                      Navigator.pushNamed(context, '/question/7-1');
                     },
                     style: ElevatedButton.styleFrom(
                         textStyle: const TextStyle(
