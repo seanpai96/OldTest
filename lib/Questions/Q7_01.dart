@@ -24,6 +24,18 @@ class _Question7PageState extends State<Question7Page> {
   final recorder = SoundRecorder();
 
   @override
+  void initState() {
+    super.initState();
+    recorder.init();
+  }
+
+  @override
+  void dispose() {
+    recorder.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: titleAppBar,
@@ -42,7 +54,7 @@ class _Question7PageState extends State<Question7Page> {
                         border: Border.all(color: Colors.black, width: 8),
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: q2ImageDataList[q2SelectedArray[0]].image,
+                      child: q2ImageDataList[q7SelectedArray[currentIndex]].image,
                     ),
                   ),
                   SearchBar(),
@@ -94,7 +106,7 @@ class _Question7PageState extends State<Question7Page> {
       label: Text(
         text,
         // 設定字體大小及字體粗細（bold粗體，normal正常體）
-        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        style: const TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
       ),
       // 當 icon 被點擊時執行的動作
       onPressed: () async {

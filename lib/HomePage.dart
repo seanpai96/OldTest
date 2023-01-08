@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'global.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 
 class MyHomePage extends StatefulWidget {
@@ -53,12 +54,12 @@ class _MyHomePageState extends State<MyHomePage> {
             Padding(padding: const EdgeInsets.all(20),
               child: ElevatedButton(
                 onPressed: (){
-                  Navigator.pushNamed(context, '/setting');
+                  AudioPlayer().play(AssetSource('Voice/Test.mp3'));
                 },
                 style: ElevatedButton.styleFrom(
                     textStyle: const TextStyle(fontSize: 80, fontWeight: FontWeight.bold)
                 ),
-                child: const Text("設定"),
+                child: const Text("音量測試"),
               ),
             )
           ],
