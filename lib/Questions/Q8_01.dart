@@ -125,7 +125,7 @@ class _Question8PageState extends State<Question8Page> {
     if(currentAddUp == q8TotalAnswer){
       user.point++;
     }
-    Navigator.pushNamed(context, '/profile/age');
+    Navigator.pushNamed(context, '/question/9-intro');
   }
 
 }

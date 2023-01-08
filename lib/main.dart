@@ -8,6 +8,7 @@ import 'package:old_test/Questions/Q6_01.dart';
 import 'package:old_test/Questions/Q6_intro.dart';
 import 'package:old_test/Questions/Q8_01.dart';
 import 'package:old_test/Questions/Q8_intro.dart';
+import 'package:old_test/Questions/Q9_01.dart';
 import 'package:old_test/SettingPage.dart';
 import 'GenderInput.dart';
 import 'HomePage.dart';
@@ -23,6 +24,7 @@ import 'Questions/Q5_01.dart';
 import 'Questions/Q5_intro.dart';
 import 'Questions/Q7_01.dart';
 import 'Questions/Q7_intro.dart';
+import 'Questions/Q9_intro.dart';
 import 'ScorePage.dart';
 
 void main() {
@@ -67,8 +69,8 @@ class MyApp extends StatelessWidget {
         '/question/7-intro': (context) => const Question7IntroPage(),
         '/question/8-1': (context) => const Question8Page(),
         '/question/8-intro': (context) => const Question8IntroPage(),
-        '/question/9-1': (context) => const Question8Page(),
-        '/question/9-intro': (context) => const Question8IntroPage(),
+        '/question/9-1': (context) => const Question9Page(),
+        '/question/9-intro': (context) => const Question9IntroPage(),
       },
     );
   }

@@ -27,7 +27,7 @@ class _Question7PageState extends State<Question7Page> {
   @override
   void initState() {
     super.initState();
-    AudioPlayer().play(AssetSource('Voice/Q3_1.mp3'));
+    AudioPlayer().play(AssetSource('Voice/Q7_1.mp3'));
     recorder.init();
   }
 
@@ -167,9 +167,9 @@ class _Question7PageState extends State<Question7Page> {
       if(currentIndex >= 3){
         currentIndex--;
         print(user.point);
-        Navigator.pushNamed(context, '/');
+        Navigator.pushNamed(context, '/question/8-intro');
       }else{
-        AudioPlayer().play(AssetSource('Voice/Q3_1.mp3'));
+        AudioPlayer().play(AssetSource('Voice/Q7_1.mp3'));
       }
     });
   }
