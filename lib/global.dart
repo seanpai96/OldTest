@@ -20,6 +20,8 @@ var q5RandomInt = -1;
 var q5RandomIntArray = [-1, -1, -1, -1, -1];
 var q6RandomInt = -1;
 var q6RandomIntArray = [-1, -1, -1];
+var q8RandomIntArray = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
+var q8TotalAnswer = 0;
 
 bool isNumeric(String? s){
   if(s == null) return false;

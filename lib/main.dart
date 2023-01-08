@@ -6,6 +6,8 @@ import 'package:old_test/Questions/Q1_05.dart';
 import 'package:old_test/Questions/Q3_01.dart';
 import 'package:old_test/Questions/Q6_01.dart';
 import 'package:old_test/Questions/Q6_intro.dart';
+import 'package:old_test/Questions/Q8_01.dart';
+import 'package:old_test/Questions/Q8_intro.dart';
 import 'package:old_test/SettingPage.dart';
 import 'GenderInput.dart';
 import 'HomePage.dart';
@@ -63,6 +65,10 @@ class MyApp extends StatelessWidget {
         '/question/6-intro': (context) => const Question6IntroPage(),
         '/question/7-1': (context) => const Question7Page(),
         '/question/7-intro': (context) => const Question7IntroPage(),
+        '/question/8-1': (context) => const Question8Page(),
+        '/question/8-intro': (context) => const Question8IntroPage(),
+        '/question/9-1': (context) => const Question8Page(),
+        '/question/9-intro': (context) => const Question8IntroPage(),
       },
     );
   }

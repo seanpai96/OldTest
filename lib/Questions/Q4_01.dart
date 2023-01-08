@@ -61,7 +61,7 @@ class _Question4PageState extends State<Question4Page> {
       label: Text(
         text,
         // 設定字體大小及字體粗細（bold粗體，normal正常體）
-        style: const TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+        style: const TextStyle(fontSize: 60, fontWeight: FontWeight.bold)
       ),
       // 當 icon 被點擊時執行的動作
       onPressed: () async {

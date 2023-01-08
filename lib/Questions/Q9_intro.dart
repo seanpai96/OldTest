@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import '../global.dart';
-import 'dart:math';
 import 'package:audioplayers/audioplayers.dart';
 
 
-class Question7IntroPage extends StatefulWidget {
-  const Question7IntroPage({super.key});
+class Question9IntroPage extends StatefulWidget {
+  const Question9IntroPage({super.key});
 
   @override
-  State<StatefulWidget> createState() => _Question7IntroPageState();
+  State<StatefulWidget> createState() => _Question9IntroPageState();
 }
 
-class _Question7IntroPageState extends State<Question7IntroPage> {
+class _Question9IntroPageState extends State<Question9IntroPage> {
+
 
   @override
   void initState() {
     super.initState();
-    AudioPlayer().play(AssetSource('Voice/Q7_intro.mp3'));
+    AudioPlayer().play(AssetSource('Voice/Q9_intro.mp3'));
   }
 
   @override
@@ -32,25 +32,13 @@ class _Question7IntroPageState extends State<Question7IntroPage> {
                   const Padding(
                     padding: EdgeInsets.all(10),
                     child: Text(
-                      "接下來會出現幾張圖片，請說出他們是什麼物品！",
+                      "接下來我會說一句話，說完後請跟著說一次！",
                       style: bigTextStyle,
                     ),
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      //random select three number from 0 to 9 and put them into q2SelectedArray
-                      Random random = Random();
-                      int i = 0;
-                      while(i < 3){
-                        int temp = random.nextInt(10);
-                        if(q7SelectedArray.contains(temp)){
-                          continue;
-                        } else {
-                          q7SelectedArray[i] = temp;
-                          i++;
-                        }
-                      }
-                      Navigator.pushNamed(context, '/question/7-1');
+                      Navigator.pushNamed(context, '/question/9-1');
                     },
                     style: ElevatedButton.styleFrom(
                         textStyle: const TextStyle(

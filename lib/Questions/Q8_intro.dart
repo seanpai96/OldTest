@@ -4,19 +4,20 @@ import 'dart:math';
 import 'package:audioplayers/audioplayers.dart';
 
 
-class Question7IntroPage extends StatefulWidget {
-  const Question7IntroPage({super.key});
+class Question8IntroPage extends StatefulWidget {
+  const Question8IntroPage({super.key});
 
   @override
-  State<StatefulWidget> createState() => _Question7IntroPageState();
+  State<StatefulWidget> createState() => _Question8IntroPageState();
 }
 
-class _Question7IntroPageState extends State<Question7IntroPage> {
+class _Question8IntroPageState extends State<Question8IntroPage> {
+
 
   @override
   void initState() {
     super.initState();
-    AudioPlayer().play(AssetSource('Voice/Q7_intro.mp3'));
+    AudioPlayer().play(AssetSource('Voice/Q8_intro.mp3'));
   }
 
   @override
@@ -32,7 +33,7 @@ class _Question7IntroPageState extends State<Question7IntroPage> {
                   const Padding(
                     padding: EdgeInsets.all(10),
                     child: Text(
-                      "接下來會出現幾張圖片，請說出他們是什麼物品！",
+                      "接下來當螢幕上出現1時，請按下按鈕！",
                       style: bigTextStyle,
                     ),
                   ),
@@ -41,16 +42,13 @@ class _Question7IntroPageState extends State<Question7IntroPage> {
                       //random select three number from 0 to 9 and put them into q2SelectedArray
                       Random random = Random();
                       int i = 0;
-                      while(i < 3){
+                      while(i < 10){
                         int temp = random.nextInt(10);
-                        if(q7SelectedArray.contains(temp)){
-                          continue;
-                        } else {
-                          q7SelectedArray[i] = temp;
-                          i++;
-                        }
+                        q8RandomIntArray[i] = temp;
+                        if(temp == 1) q8TotalAnswer++;
+                        i++;
                       }
-                      Navigator.pushNamed(context, '/question/7-1');
+                      Navigator.pushNamed(context, '/question/8-1');
                     },
                     style: ElevatedButton.styleFrom(
                         textStyle: const TextStyle(
