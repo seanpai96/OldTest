@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import '../global.dart';
 
@@ -10,6 +11,12 @@ class Question1Sub5Page extends StatefulWidget {
 
 class _Question1Sub5PageState extends State<Question1Sub5Page> {
   TextEditingController ageInputController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    AudioPlayer().play(AssetSource('Voice/Q1_5.mp3'));
+  }
 
   @override
   Widget build(BuildContext context) {

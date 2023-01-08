@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'global.dart';
@@ -11,6 +12,12 @@ class EnterQPage extends StatefulWidget {
 
 class _EnterQPageState extends State<EnterQPage> {
   TextEditingController ageInputController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    AudioPlayer().play(AssetSource('Voice/EnterQ.mp3'));
+  }
 
   @override
   Widget build(BuildContext context) {

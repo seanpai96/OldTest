@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import '../global.dart';
 
@@ -9,6 +10,12 @@ class Question2IntroPage extends StatefulWidget {
 }
 
 class _Question2IntroPageState extends State<Question2IntroPage> {
+  @override
+  void initState() {
+    super.initState();
+    AudioPlayer().play(AssetSource('Voice/Q5_intro.mp3'));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

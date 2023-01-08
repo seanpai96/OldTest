@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'global.dart';
@@ -12,6 +13,12 @@ class AgeInputPage extends StatefulWidget {
 class _AgeInputPageState extends State<AgeInputPage> {
   TextEditingController ageInputController = TextEditingController();
   bool isValid = true;
+
+  @override
+  void initState() {
+    super.initState();
+    AudioPlayer().play(AssetSource('Voice/Age.mp3'));
+  }
 
   @override
   Widget build(BuildContext context) {
