@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import '../global.dart';
 
@@ -12,6 +13,13 @@ class Question3Page extends StatefulWidget {
 
 class _Question3PageState extends State<Question3Page> {
   TextEditingController ageInputController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    AudioPlayer().play(AssetSource('Voice/Q3_1.mp3'));
+  }
+
   bool isValid = true;
   int currentNumber = 100, currentTimes = 0;
   String prompt = "100減7是多少？";
@@ -247,6 +255,7 @@ class _Question3PageState extends State<Question3Page> {
       }else{
         currentNumber = input;
         prompt = "再減7是多少?";
+        AudioPlayer().play(AssetSource('Voice/Q3_2.mp3'));
         clearNumber();
       }
 

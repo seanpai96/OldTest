@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import '../global.dart';
 import '../Q2ImageData.dart';
@@ -10,6 +11,41 @@ class Question2ImagePage extends StatefulWidget {
 }
 
 class _Question2ImagePageState extends State<Question2ImagePage> {
+
+  final audioPlayer = AudioPlayer();
+  var index = 0;
+
+
+  Widget currentImage = q2ImageDataList[q2SelectedArray[0]].image;
+
+  play() async {
+    audioPlayer.play(AssetSource(q2ImageDataList[q2SelectedArray[index]].audioPath));
+    int flag = 1;
+
+    audioPlayer.onPlayerComplete.listen((event) {
+      if(index < 3 && flag == 1){
+        flag = 0;
+        setState(() {
+          index = index + 1;
+          currentImage = q2ImageDataList[q2SelectedArray[index]].image;
+        });
+        play();
+        return;
+      }
+      else if(flag == 1){
+        flag = 0;
+        Navigator.pushNamed(context, '/favorite');
+        return;
+      }
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    play();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +65,7 @@ class _Question2ImagePageState extends State<Question2ImagePage> {
                         border: Border.all(color: Colors.black, width: 8),
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: q2ImageDataList[q2SelectedArray[0]].image,
+                      child: currentImage,
                     ),
                   ),
                   Padding(

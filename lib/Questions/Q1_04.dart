@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import '../global.dart';
 
@@ -14,6 +15,12 @@ class _Question1Sub4PageState extends State<Question1Sub4Page> {
   TextEditingController ageInputController = TextEditingController();
   bool isValid = true;
   int day = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    AudioPlayer().play(AssetSource('Voice/Q1_4.mp3'));
+  }
 
   @override
   Widget build(BuildContext context) {
