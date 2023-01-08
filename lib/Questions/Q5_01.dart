@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import '../global.dart';
 
@@ -15,6 +16,68 @@ class _Question5PageState extends State<Question5Page> {
   bool isValid = true, enableInput = false;
   int currentNumber = 100, currentTimes = 0;
   String prompt = "";
+  final audioPlayer = AudioPlayer();
+  int index = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    toggleInput(false);
+    prompt = q5RandomIntArray[index].toString();
+    play();
+  }
+
+  play() async {
+    if(q5RandomIntArray[index] == 0) {
+      audioPlayer.play(AssetSource('Voice/numbers/zero.mp3'));
+    }
+    else if(q5RandomIntArray[index] == 1) {
+      audioPlayer.play(AssetSource('Voice/numbers/one.mp3'));
+    }
+    else if(q5RandomIntArray[index] == 2) {
+      audioPlayer.play(AssetSource('Voice/numbers/two.mp3'));
+    }
+    else if(q5RandomIntArray[index] == 3) {
+      audioPlayer.play(AssetSource('Voice/numbers/three.mp3'));
+    }
+    else if(q5RandomIntArray[index] == 4) {
+      audioPlayer.play(AssetSource('Voice/numbers/four.mp3'));
+    }
+    else if(q5RandomIntArray[index] == 5) {
+      audioPlayer.play(AssetSource('Voice/numbers/five.mp3'));
+    }
+    else if(q5RandomIntArray[index] == 6) {
+      audioPlayer.play(AssetSource('Voice/numbers/six.mp3'));
+    }
+    else if(q5RandomIntArray[index] == 7) {
+      audioPlayer.play(AssetSource('Voice/numbers/seven.mp3'));
+    }
+    else if(q5RandomIntArray[index] == 8) {
+      audioPlayer.play(AssetSource('Voice/numbers/eight.mp3'));
+    }
+    else if(q5RandomIntArray[index] == 9) {
+      audioPlayer.play(AssetSource('Voice/numbers/nine.mp3'));
+    }
+    int flag = 1;
+
+    audioPlayer.onPlayerComplete.listen((event) {
+      if(index < 4 && flag == 1){
+        flag = 0;
+        setState(() {
+          index = index + 1;
+          prompt = q5RandomIntArray[index].toString();
+        });
+        play();
+        return;
+      }
+      else if(flag == 1){
+        flag = 0;
+        prompt = "";
+        toggleInput(true);
+        return;
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
