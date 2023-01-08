@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'global.dart';
 
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+class SettingPage extends StatefulWidget {
+  const SettingPage({super.key});
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -15,10 +15,10 @@ class MyHomePage extends StatefulWidget {
   // always marked "final".
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<SettingPage> createState() => _SettingPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _SettingPageState extends State<SettingPage> {
 
   @override
   Widget build(BuildContext context) {
@@ -38,29 +38,6 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Padding(padding: const EdgeInsets.all(20),
-              child: ElevatedButton(
-                onPressed: (){
-                  reset();
-                  Navigator.pushNamed(context, '/profile/age');
-                },
-                style: ElevatedButton.styleFrom(
-                  textStyle: const TextStyle(fontSize: 80, fontWeight: FontWeight.bold)
-                ),
-                child: const Text("開始"),
-              ),
-            ),
-            Padding(padding: const EdgeInsets.all(20),
-              child: ElevatedButton(
-                onPressed: (){
-                  Navigator.pushNamed(context, '/setting');
-                },
-                style: ElevatedButton.styleFrom(
-                    textStyle: const TextStyle(fontSize: 80, fontWeight: FontWeight.bold)
-                ),
-                child: const Text("設定"),
-              ),
-            )
           ],
         ),
       ),

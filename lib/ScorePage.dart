@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'global.dart';
 
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+class ScorePage extends StatefulWidget {
+  const ScorePage({super.key});
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -15,10 +15,10 @@ class MyHomePage extends StatefulWidget {
   // always marked "final".
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<ScorePage> createState() => _ScorePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _ScorePageState extends State<ScorePage> {
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +28,31 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
+
+    var result = "";
+    if(user.education == 0){
+      if(user.point < 16){
+        result = "認知功能異常";
+      }else{
+        result = "正常";
+      }
+    }else if(user.education == 1){
+      if(user.point < 21){
+        result = "認知功能異常";
+      }else{
+        result = "正常";
+      }
+    }else{
+      if(user.point < 16){
+        result = "重度認知功能遺失";
+      }else if(user.point <24){
+        result = "輕度認知功能遺失";
+      }else{
+        result = "正常";
+      }
+    }
+
+
     return Scaffold(
       appBar: titleAppBar,
       body: Align(
@@ -38,29 +63,10 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Padding(padding: const EdgeInsets.all(20),
-              child: ElevatedButton(
-                onPressed: (){
-                  reset();
-                  Navigator.pushNamed(context, '/profile/age');
-                },
-                style: ElevatedButton.styleFrom(
-                  textStyle: const TextStyle(fontSize: 80, fontWeight: FontWeight.bold)
-                ),
-                child: const Text("開始"),
-              ),
-            ),
-            Padding(padding: const EdgeInsets.all(20),
-              child: ElevatedButton(
-                onPressed: (){
-                  Navigator.pushNamed(context, '/setting');
-                },
-                style: ElevatedButton.styleFrom(
-                    textStyle: const TextStyle(fontSize: 80, fontWeight: FontWeight.bold)
-                ),
-                child: const Text("設定"),
-              ),
-            )
+            Padding(padding: EdgeInsets.all(10), child: Text("您的分數是", style: bigTextStyle,),),
+            Padding(padding: EdgeInsets.all(10), child: Text("${user.point}分", style: bigTextStyle,),),
+            Padding(padding: EdgeInsets.all(10), child: Text("您的結果是", style: bigTextStyle,),),
+            Padding(padding: EdgeInsets.all(10), child: Text(result, style: bigTextStyle,),),
           ],
         ),
       ),

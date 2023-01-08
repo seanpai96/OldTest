@@ -14,7 +14,15 @@ const keypadTextStyle = TextStyle(fontSize: 60, fontWeight: FontWeight.bold);
 
 var user = UserData();
 
+var q2SelectedArray = [-1, -1, -1];
+var q7SelectedArray = [-1, -1, -1];
+
 bool isNumeric(String? s){
   if(s == null) return false;
   return double.tryParse(s) != null;
+}
+
+void reset(){
+  user = UserData();
+  q2SelectedArray = [-1, -1, -1];
 }

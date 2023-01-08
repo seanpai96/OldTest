@@ -3,12 +3,14 @@ import 'package:old_test/EduInput.dart';
 import 'package:old_test/EnterQPage.dart';
 import 'package:old_test/Questions/Q1_01.dart';
 import 'package:old_test/Questions/Q1_05.dart';
+import 'package:old_test/SettingPage.dart';
 import 'GenderInput.dart';
 import 'HomePage.dart';
 import 'AgeInput.dart';
 import 'Questions/Q1_02.dart';
 import 'Questions/Q1_03.dart';
 import 'Questions/Q1_04.dart';
+import 'ScorePage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,11 +29,13 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => const MyHomePage(title: "簡易心智量表"),
+        '/': (context) => const MyHomePage(),
+        '/setting': (context) => const SettingPage(),
         '/profile/age': (context) => const AgeInputPage(),
         '/profile/gender': (context) => const GenderInputPage(),
         '/profile/edu': (context) => const EduInputPage(),
         '/profile/enterQ': (context) => const EnterQPage(),
+        '/score': (context) => const ScorePage(),
         '/question/1-1': (context) => const Question1Sub1Page(),
         '/question/1-2': (context) => const Question1Sub2Page(),
         '/question/1-3': (context) => const Question1Sub3Page(),
