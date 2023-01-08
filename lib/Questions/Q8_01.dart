@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import '../global.dart';
 import '../Q2ImageData.dart';
@@ -17,9 +18,69 @@ class Question8Page extends StatefulWidget {
 
 class _Question8PageState extends State<Question8Page> {
 
+  final audioPlayer = AudioPlayer();
   bool continueEnabled = false;
   int currentNumber = 0, currentAddUp = 0;
+  int index = 0;
 
+  @override
+  void initState() {
+    super.initState();
+    currentNumber = q8RandomIntArray[0];
+    play();
+  }
+
+  play() async {
+    if(q8RandomIntArray[index] == 0) {
+      audioPlayer.play(AssetSource('Voice/numbers/zero.mp3'));
+    }
+    else if(q8RandomIntArray[index] == 1) {
+      audioPlayer.play(AssetSource('Voice/numbers/one.mp3'));
+    }
+    else if(q8RandomIntArray[index] == 2) {
+      audioPlayer.play(AssetSource('Voice/numbers/two.mp3'));
+    }
+    else if(q8RandomIntArray[index] == 3) {
+      audioPlayer.play(AssetSource('Voice/numbers/three.mp3'));
+    }
+    else if(q8RandomIntArray[index] == 4) {
+      audioPlayer.play(AssetSource('Voice/numbers/four.mp3'));
+    }
+    else if(q8RandomIntArray[index] == 5) {
+      audioPlayer.play(AssetSource('Voice/numbers/five.mp3'));
+    }
+    else if(q8RandomIntArray[index] == 6) {
+      audioPlayer.play(AssetSource('Voice/numbers/six.mp3'));
+    }
+    else if(q8RandomIntArray[index] == 7) {
+      audioPlayer.play(AssetSource('Voice/numbers/seven.mp3'));
+    }
+    else if(q8RandomIntArray[index] == 8) {
+      audioPlayer.play(AssetSource('Voice/numbers/eight.mp3'));
+    }
+    else if(q8RandomIntArray[index] == 9) {
+      audioPlayer.play(AssetSource('Voice/numbers/nine.mp3'));
+    }
+    int flag = 1;
+
+    audioPlayer.onPlayerComplete.listen((event) {
+      if(index < 9 && flag == 1){
+        flag = 0;
+        setState(() {
+          index = index + 1;
+          currentNumber = q8RandomIntArray[index];
+        });
+        play();
+        return;
+      }
+      else if(flag == 1){
+        flag = 0;
+        currentNumber = 0;
+        evaluate();
+        return;
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
