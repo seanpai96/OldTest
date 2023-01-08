@@ -2,14 +2,14 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import '../global.dart';
 
-class Question2IntroPage extends StatefulWidget {
-  const Question2IntroPage({super.key});
+class Question6IntroPage extends StatefulWidget {
+  const Question6IntroPage({super.key});
 
   @override
-  State<StatefulWidget> createState() => _Question2IntroPageState();
+  State<StatefulWidget> createState() => _Question6IntroPageState();
 }
 
-class _Question2IntroPageState extends State<Question2IntroPage> {
+class _Question6IntroPageState extends State<Question6IntroPage> {
   @override
   void initState() {
     super.initState();

@@ -49,7 +49,7 @@ class _Question2IntroPageState extends State<Question2IntroPage> {
                         }
                       }
 
-                      Navigator.pushNamed(context, '/profile/age');
+                      Navigator.pushNamed(context, '/question/2-image');
                     },
                     style: ElevatedButton.styleFrom(
                         textStyle: const TextStyle(

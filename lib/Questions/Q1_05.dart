@@ -91,7 +91,7 @@ class _Question1Sub5PageState extends State<Question1Sub5Page> {
                         user.point += 1;
                       }
                       print(user.point);
-                      // Navigator.pushNamed(context, '/profile/enterQ');
+                      Navigator.pushNamed(context, '/question/2-intro');
                     },
                     child: const Text(
                       "秋",

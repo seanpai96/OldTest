@@ -251,7 +251,7 @@ class _Question3PageState extends State<Question3Page> {
       }
       currentTimes++;
       if(currentTimes == 5){
-        Navigator.pushNamed(context, '/question/1-4');
+        Navigator.pushNamed(context, '/question/4-1');
       }else{
         currentNumber = input;
         prompt = "再減7是多少?";

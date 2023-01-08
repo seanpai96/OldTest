@@ -34,7 +34,7 @@ class _Question2ImagePageState extends State<Question2ImagePage> {
       }
       else if(flag == 1){
         flag = 0;
-        Navigator.pushNamed(context, '/favorite');
+        Navigator.pushNamed(context, '/question/2-record');
         return;
       }
     });

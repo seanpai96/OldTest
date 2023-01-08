@@ -124,7 +124,23 @@ class _Question2RecordPageState extends State<Question2RecordPage> {
                       ),
                     ),
                   ),
-                  buildRecord()
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      buildRecord(),
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/question/3-1');
+                        },
+                        style: ElevatedButton.styleFrom(
+                            textStyle: const TextStyle(
+                                fontSize: 80, fontWeight: FontWeight.bold)
+                        ),
+                        child: const Text("繼續"),
+                      )
+                    ],
+                  )
+
                 ])));
   }
 }

@@ -3,6 +3,9 @@ import 'package:old_test/EduInput.dart';
 import 'package:old_test/EnterQPage.dart';
 import 'package:old_test/Questions/Q1_01.dart';
 import 'package:old_test/Questions/Q1_05.dart';
+import 'package:old_test/Questions/Q3_01.dart';
+import 'package:old_test/Questions/Q6_01.dart';
+import 'package:old_test/Questions/Q6_intro.dart';
 import 'package:old_test/SettingPage.dart';
 import 'GenderInput.dart';
 import 'HomePage.dart';
@@ -10,6 +13,14 @@ import 'AgeInput.dart';
 import 'Questions/Q1_02.dart';
 import 'Questions/Q1_03.dart';
 import 'Questions/Q1_04.dart';
+import 'Questions/Q2_image.dart';
+import 'Questions/Q2_intro.dart';
+import 'Questions/Q2_record.dart';
+import 'Questions/Q4_01.dart';
+import 'Questions/Q5_01.dart';
+import 'Questions/Q5_intro.dart';
+import 'Questions/Q7_01.dart';
+import 'Questions/Q7_intro.dart';
 import 'ScorePage.dart';
 
 void main() {
@@ -41,6 +52,17 @@ class MyApp extends StatelessWidget {
         '/question/1-3': (context) => const Question1Sub3Page(),
         '/question/1-4': (context) => const Question1Sub4Page(),
         '/question/1-5': (context) => const Question1Sub5Page(),
+        '/question/2-image': (context) => const Question2ImagePage(),
+        '/question/2-intro': (context) => const Question2IntroPage(),
+        '/question/2-record': (context) => const Question2RecordPage(),
+        '/question/3-1': (context) => const Question3Page(),
+        '/question/4-1': (context) => const Question4Page(),
+        '/question/5-1': (context) => const Question5Page(),
+        '/question/5-intro': (context) => const Question5IntroPage(),
+        '/question/6-1': (context) => const Question6Page(),
+        '/question/6-intro': (context) => const Question6IntroPage(),
+        '/question/7-1': (context) => const Question7Page(),
+        '/question/7-intro': (context) => const Question7IntroPage(),
       },
     );
   }

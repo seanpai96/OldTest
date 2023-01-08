@@ -44,6 +44,22 @@ class _Question7PageState extends State<Question7Page> {
                     ),
                   ),
                   SearchBar(),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      RecordButton(),
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/profile/age');
+                        },
+                        style: ElevatedButton.styleFrom(
+                            textStyle: const TextStyle(
+                                fontSize: 80, fontWeight: FontWeight.bold)
+                        ),
+                        child: const Text("繼續"),
+                      )
+                    ]
+                  )
                 ])));
 
 
