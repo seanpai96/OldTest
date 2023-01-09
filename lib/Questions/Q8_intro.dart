@@ -48,6 +48,14 @@ class _Question8IntroPageState extends State<Question8IntroPage> {
                         if(temp == 1) q8TotalAnswer++;
                         i++;
                       }
+                      if(q8TotalAnswer == 0){
+                        int temp = 1 + random.nextInt(2);
+                        for(int i=0;i<temp;i++){
+                          int tmpIndex = random.nextInt(10);
+                          q8RandomIntArray[tmpIndex] = 1;
+                          q8TotalAnswer++;
+                        }
+                      }
                       Navigator.pushNamed(context, '/question/8-1');
                     },
                     style: ElevatedButton.styleFrom(

@@ -44,6 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: (){
                   reset();
                   Navigator.pushNamed(context, '/profile/age');
+                  // Navigator.pushNamed(context, '/question/8-intro');
                 },
                 style: ElevatedButton.styleFrom(
                   textStyle: const TextStyle(fontSize: 80, fontWeight: FontWeight.bold)
