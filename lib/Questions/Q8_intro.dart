@@ -33,7 +33,7 @@ class _Question8IntroPageState extends State<Question8IntroPage> {
                   const Padding(
                     padding: EdgeInsets.all(10),
                     child: Text(
-                      "接下來當螢幕上出現1時，請按下按鈕！",
+                      "接下來當螢幕上出現1時，\n請按下按鈕！",
                       style: bigTextStyle,
                     ),
                   ),

@@ -17,7 +17,7 @@ class _Question5PageState extends State<Question5Page> {
   int currentNumber = 100, currentTimes = 0;
   String prompt = "";
   final audioPlayer = AudioPlayer();
-  int index = 0;
+  int index = 4;
 
   @override
   void initState() {
@@ -61,10 +61,10 @@ class _Question5PageState extends State<Question5Page> {
     int flag = 1;
 
     audioPlayer.onPlayerComplete.listen((event) {
-      if(index < 4 && flag == 1){
+      if(index > 0  && flag == 1){
         flag = 0;
         setState(() {
-          index = index + 1;
+          index = index - 1;
           prompt = q5RandomIntArray[index].toString();
         });
         play();
@@ -304,6 +304,7 @@ class _Question5PageState extends State<Question5Page> {
       if(numInputController.text == q5RandomInt.toString()){
         user.point++;
       }
+      print("Question5, expected:${q5RandomInt.toString()}, input:${numInputController.text} ,user.point${user.point}");
       Navigator.pushNamed(context, '/question/6-intro');
       clearNumber();
     });

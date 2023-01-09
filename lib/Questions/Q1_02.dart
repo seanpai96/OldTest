@@ -246,6 +246,7 @@ class _Question1Sub2PageState extends State<Question1Sub2Page> {
       if(now.month == int.parse(ageInputController.text)){
         user.point += 1;
       }
+      print("Question1-2, user.point${user.point}");
     });
   }
 }

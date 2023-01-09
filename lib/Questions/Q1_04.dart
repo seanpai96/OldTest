@@ -195,7 +195,6 @@ class _Question1Sub4PageState extends State<Question1Sub4Page> {
                             if(day != 0){
                               isValid = true;
                               saveAge();
-                              print(user.point);
                               Navigator.pushNamed(context, '/question/1-5');
                             }else{
                               setState(() {
@@ -259,6 +258,7 @@ class _Question1Sub4PageState extends State<Question1Sub4Page> {
       if(now.weekday == day){
         user.point += 1;
       }
+      print("Question1-4, user.point${user.point}");
     });
   }
 }

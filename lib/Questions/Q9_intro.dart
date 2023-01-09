@@ -32,7 +32,7 @@ class _Question9IntroPageState extends State<Question9IntroPage> {
                   const Padding(
                     padding: EdgeInsets.all(10),
                     child: Text(
-                      "接下來我會說一句話，說完後請跟著說一次！",
+                      "接下來我會說一句話，\n說完後請跟著說一次！",
                       style: bigTextStyle,
                     ),
                   ),

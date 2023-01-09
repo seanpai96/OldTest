@@ -141,14 +141,16 @@ class _Question9PageState extends State<Question9Page> {
             ),
           ),
         ),
+        style: const TextStyle(fontSize: 40),
       ),
     );
   }
 
   void evaluate(){
-    if(recognitionController.text.contains(q2ImageDataList[q7SelectedArray[currentIndex]].name)){
+    if(recognitionController.text.contains("有錢能使鬼推磨")){
       user.point++;
     }
+    print("Question9, input:${recognitionController.text}, user.point${user.point}");
     print(user.point);
     Navigator.pushNamed(context, '/score');
   }

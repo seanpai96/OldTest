@@ -32,7 +32,7 @@ class _Question7IntroPageState extends State<Question7IntroPage> {
                   const Padding(
                     padding: EdgeInsets.all(10),
                     child: Text(
-                      "接下來會出現幾張圖片，請說出他們是什麼物品！",
+                      "接下來會出現幾張圖片\n請說出他們是什麼物品！",
                       style: bigTextStyle,
                     ),
                   ),

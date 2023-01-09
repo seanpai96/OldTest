@@ -54,7 +54,7 @@ class _Question1Sub5PageState extends State<Question1Sub5Page> {
                       if(currentSeason == 1){
                         user.point += 1;
                       }
-                      print(user.point);
+                      print("Question1-5, user.point${user.point}");
                       Navigator.pushNamed(context, '/question/2-intro');
                     },
                     child: const Text(
@@ -70,7 +70,7 @@ class _Question1Sub5PageState extends State<Question1Sub5Page> {
                       if(currentSeason == 2){
                         user.point += 1;
                       }
-                      print(user.point);
+                      print("Question1-5, user.point${user.point}");
                       Navigator.pushNamed(context, '/question/2-intro');
                     },
                     child: const Text(
@@ -90,7 +90,7 @@ class _Question1Sub5PageState extends State<Question1Sub5Page> {
                       if(currentSeason == 3){
                         user.point += 1;
                       }
-                      print(user.point);
+                      print("Question1-5, user.point${user.point}");
                       Navigator.pushNamed(context, '/question/2-intro');
                     },
                     child: const Text(
@@ -106,7 +106,7 @@ class _Question1Sub5PageState extends State<Question1Sub5Page> {
                       if(currentSeason == 4){
                         user.point += 1;
                       }
-                      print(user.point);
+                      print("Question1-5, user.point${user.point}");
                       Navigator.pushNamed(context, '/question/2-intro');
                     },
                     child: const Text(

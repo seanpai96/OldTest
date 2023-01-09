@@ -121,6 +121,7 @@ class _Question4PageState extends State<Question4Page> {
                             ),
                           ),
                         ),
+                        style: const TextStyle(fontSize: 40),
                       ),
                     ),
                   ),
@@ -134,7 +135,9 @@ class _Question4PageState extends State<Question4Page> {
                               if(recognitionController.text.contains(q2ImageDataList[e].name)){
                                 user.point++;
                               }
+                              print("Question4, input:${recognitionController.text}, selected:${q2ImageDataList[e].name}");
                             }
+                            print("Question4, user.point${user.point}");
                             Navigator.pushNamed(context, '/question/5-intro');
                           },
                           style: ElevatedButton.styleFrom(

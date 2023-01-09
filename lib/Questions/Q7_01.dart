@@ -152,6 +152,7 @@ class _Question7PageState extends State<Question7Page> {
             ),
           ),
         ),
+        style: const TextStyle(fontSize: 40),
       ),
     );
   }
@@ -166,7 +167,7 @@ class _Question7PageState extends State<Question7Page> {
       currentIndex++;
       if(currentIndex >= 3){
         currentIndex--;
-        print(user.point);
+        print("Question7, user.point${user.point}");
         Navigator.pushNamed(context, '/question/8-intro');
       }else{
         AudioPlayer().play(AssetSource('Voice/Q7_1.mp3'));

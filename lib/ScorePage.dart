@@ -31,21 +31,21 @@ class _ScorePageState extends State<ScorePage> {
 
     var result = "";
     if(user.education == 0){
-      if(user.point < 16){
+      if(user.point < 11){
         result = "認知功能異常";
       }else{
         result = "正常";
       }
     }else if(user.education == 1){
-      if(user.point < 21){
+      if(user.point < 14){
         result = "認知功能異常";
       }else{
         result = "正常";
       }
     }else{
-      if(user.point < 16){
+      if(user.point < 11){
         result = "重度認知功能遺失";
-      }else if(user.point <24){
+      }else if(user.point <18){
         result = "輕度認知功能遺失";
       }else{
         result = "正常";

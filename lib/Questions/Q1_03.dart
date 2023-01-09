@@ -199,7 +199,6 @@ class _Question1Sub3PageState extends State<Question1Sub3Page> {
                             if(isNumeric(ageInputController.text)){
                               isValid = true;
                               saveAge(int.parse(ageInputController.text));
-                              print(user.point);
                               Navigator.pushNamed(context, '/question/1-4');
                             }else{
                               setState(() {
@@ -247,6 +246,7 @@ class _Question1Sub3PageState extends State<Question1Sub3Page> {
       if(now.day == int.parse(ageInputController.text)){
         user.point += 1;
       }
+      print("Question1-3, user.point${user.point}");
     });
   }
 }

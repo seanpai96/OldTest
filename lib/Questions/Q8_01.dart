@@ -97,11 +97,12 @@ class _Question8PageState extends State<Question8Page> {
                     child: Container(
                       width: 400,
                       height: 400,
+                      alignment: Alignment.center,
                       decoration: BoxDecoration(
                         border: Border.all(color: Colors.black, width: 8),
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: Text(currentNumber.toString(), style: bigTextStyle,),
+                      child: Text(currentNumber.toString(), style: TextStyle(fontSize: 120, fontWeight: FontWeight.bold),),
                     ),
                   ),
                   ElevatedButton(
@@ -114,7 +115,7 @@ class _Question8PageState extends State<Question8Page> {
                       foregroundColor: Colors.white,
                       backgroundColor: Colors.red
                     ),
-                    child: const Icon(Icons.add),
+                    child: const Icon(Icons.add,size: 160,),
                   )
                 ])));
 
@@ -125,6 +126,7 @@ class _Question8PageState extends State<Question8Page> {
     if(currentAddUp == q8TotalAnswer){
       user.point++;
     }
+    print("Question8,expected:$q8TotalAnswer, input:$currentAddUp, user.point${user.point}");
     Navigator.pushNamed(context, '/question/9-intro');
   }
 

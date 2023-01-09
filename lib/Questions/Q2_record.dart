@@ -122,6 +122,7 @@ class _Question2RecordPageState extends State<Question2RecordPage> {
                             ),
                           ),
                         ),
+                        style: const TextStyle(fontSize: 40),
                       ),
                     ),
                   ),
@@ -135,7 +136,9 @@ class _Question2RecordPageState extends State<Question2RecordPage> {
                             if(recognitionController.text.contains(q2ImageDataList[e].name)){
                               user.point++;
                             }
+                            print("Question2, input:${recognitionController.text}, selected:${q2ImageDataList[e].name}");
                           }
+                          print("Question2, user.point${user.point}");
                           Navigator.pushNamed(context, '/question/3-1');
                         },
                         style: ElevatedButton.styleFrom(

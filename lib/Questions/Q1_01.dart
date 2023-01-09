@@ -246,6 +246,7 @@ class _Question1Sub1PageState extends State<Question1Sub1Page> {
       if(now.year == int.parse(ageInputController.text) || now.year == int.parse(ageInputController.text)+1911){
         user.point += 1;
       }
+      print("Question1-1, user.point${user.point}");
     });
   }
 }
